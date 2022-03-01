@@ -1,7 +1,10 @@
 package com.wangzs.stander;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -91,4 +94,23 @@ public class BaseActivity implements ActivityInterface {
         return activity.getIntent();
     }
 
+    public ComponentName startService(Intent service) {
+        Intent intentNew = new Intent();
+        intentNew.putExtra("className", service.getComponent().getClassName());
+        return activity.startService(intentNew);
+    }
+    // 注册广播, 使用宿主环境-appActivity
+
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+        return activity.registerReceiver(receiver, filter);
+    }
+
+    // 发送广播, 使用宿主环境-appActivity
+    public void sendBroadcast(Intent intent) {
+        activity.sendBroadcast(intent);
+    }
+
+    public void unregisterReceiver(BroadcastReceiver receiver) {
+        activity.unregisterReceiver(receiver);
+    }
 }

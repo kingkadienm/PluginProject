@@ -2,7 +2,10 @@ package com.wangzs.pluginproject;
 
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -65,4 +68,22 @@ public class ProxyActivity extends Activity {
         proxyIntent.putExtras(intent.getExtras());
         super.startActivity(proxyIntent);
     }
+
+
+    @Override
+    public ComponentName startService(Intent service) {
+        String className = service.getStringExtra("className");
+        Intent proxyIntent = new Intent(this, ProxyService.class);
+        proxyIntent.putExtra("className", className);
+        proxyIntent.putExtras(service.getExtras());
+        return super.startService(proxyIntent);
+    }
+
+    @Override
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+        String name = receiver.getClass().getName();
+        ProxyReceiver proxyReceiver = new ProxyReceiver(name);
+        return super.registerReceiver(proxyReceiver, filter);
+    }
+
 }

@@ -18,8 +18,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:text="跳转"
         android:id="@+id/intentNew"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-          />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="启动服务"
+        android:id="@+id/startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="注册光波"
+        android:id="@+id/regiestReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="发送光波"
+        android:id="@+id/sendReceiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="取消注册光波"
+        android:id="@+id/unRegiestReceiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </androidx.appcompat.widget.LinearLayoutCompat>

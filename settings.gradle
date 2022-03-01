@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PluginProject"
 include ':app'
+include ':plugin_package'
+include ':stander'

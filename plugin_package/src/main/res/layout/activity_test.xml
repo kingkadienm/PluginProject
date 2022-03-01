@@ -4,25 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".TestActivity">
+
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/testTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1111111"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/testTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1111111"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+
+    <Button
+        android:id="@+id/intentNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
-    <Button
-        android:onClick="loadPlugin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="加载插件" />
-
-    <Button
-        android:onClick="intentPlugin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="跳转" />
-
 </androidx.appcompat.widget.LinearLayoutCompat>
